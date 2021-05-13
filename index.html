@@ -3,14 +3,15 @@
   <head>
     <title>QR Kód olvasó</title>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <link rel="stylesheet" href="src/styles.css" />
     <script src="lib/qr_packed.js"></script>
     <script src="src/data.js"></script>
+    <link rel="manifest" href="manifest.webmanifest" />
   </head>
   <body>
     <div id="container">
-      <h1>QR Kód olvasó</h1>
+      <h1>OP-QR Kód olvasó</h1>
 
       <a id="btn-scan-qr"><img src="src/qr_icon.svg"><a/>
       <a id="btn-fullscreen">
@@ -21,7 +22,7 @@
 
       <canvas hidden="" id="qr-canvas"></canvas>
 
-      <section id="preview" hidden="">
+      <section id="preview" hidden>
         <div class="patient-data" >
           <h2 id=data-name></h2>
           <p>TAJ: <span id="data-taj"/></p>
@@ -32,11 +33,14 @@
         </div>
       </section>
 
-      <section id="debug" hidden="">
+      <section id="debug" hidden>
       </section>
 
-      <section id="warning"></section>
+      <section id="warning" hidden></section>
 
+      <section id="sec-btn">
+        <button id="btn-list">Lista</button>
+      </section>
     </div>
     <script src="src/app.js"></script>
   </body>

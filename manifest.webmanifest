@@ -1,0 +1,16 @@
+{
+  "background_color": "black",
+  "description": "Oltáspont regisztráció QR kód olvasó",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "src/qr_icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "name": "Oltópont QR beolvasó app",
+  "short_name": "QROltás",
+  "start_url": "index.html"
+}

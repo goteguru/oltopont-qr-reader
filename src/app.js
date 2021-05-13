@@ -102,8 +102,8 @@ const toggleFullScreen = elm => {
 
 btnFullScreen.onclick = () => toggleFullScreen(container)
 secWarning.onclick = () => secWarning.style.display = 'none'
-
 secDebug.onclick = () => secDebug.hidden = true
+
 document.getElementById("btn-cancel").onclick = () => secPreview.hidden = true
 document.getElementById("btn-send").onclick = () => {
   // TODO: dataStore.postData()
@@ -111,6 +111,28 @@ document.getElementById("btn-send").onclick = () => {
   secDebug.hidden = false
 }
 
+// Seviceworker 
+// chrome alapú böngészők esetén kötelező PWA elem
+if ('serviceWorker' in navigator) {
+  // debug
+  navigator.serviceWorker.getRegistrations().then(function(registrations) {
+   for(let registration of registrations) {
+    registration.unregister()
+  } })
+
+  navigator.serviceWorker
+    .register('sw.js')
+    .then(() => { console.log('Service Worker registered.'); })
+    .catch(e => { console.log('SW error', e); })
+}
+
+// Ha még nem fullscreen akkor (nem pwa módban vagyunk) legyen gomb
+if(!window.matchMedia('(display-mode: fullscreen)').matches)
+  btnFullScreen.style.display = 'block'
+
+document.getElementById("btn-list").onclick = () => { 
+  window.location = "https://github.com/goteguru/oltopont-qr-reader" 
+}
 
 const test="PATIONBETEG#012345678|Dr. Valami-Hosszú|Elsőnév Másodiknev|F|20100112|HUN|Kiskunfélegyháza|Hosszú-vezetéknév elsőnév másodiknév|HUN|1234|Kiskunfélegyháza|Valami nagyon nagyon nagyon hosszu utca 111/B|+36301234567|balazs.frey@gmail.com#P|1|Lorem ipsum dolor sit amet, consectetur adipiscing elit.|1|Lorem ipsum dolor sit amet, consectetur adipiscing elit.|0|1|Lorem ipsum dolor sit amet, consectetur adipiscing elit.|0|0|0|0|0|1|Lorem ipsum dolor sit amet, consectetur adipiscing elit.|0|0|0|0|0|1|Lorem ipsum dolor sit amet, consectetur adipiscing elit.|0|0|0"
 

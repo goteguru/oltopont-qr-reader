@@ -55,13 +55,13 @@ h1 {
 }
 
 #btn-fullscreen {
-  position: fixed ;
-  left: 0; top:0;
-
+  position: fixed;
+  right: 0; top:0;
+  display: none;
 }
 
 #btn-fullscreen svg {
-  fill:red;
+  fill: white;
 }
 
 #warning {
@@ -78,6 +78,13 @@ h1 {
 
 #debug {
   background: yellow;
+}
+
+#sec-btn {
+  width: 100%;
+  position: fixed;
+  left:0;
+  bottom:0;
 }
 
 /* Gombok és egyebek */
