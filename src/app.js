@@ -138,7 +138,6 @@ const test="PATIONBETEG#012345678|Dr. Valami-Hosszú|Elsőnév Másodiknev|F|201
 
 dataStore.parse(test)
 secDebug.innerText = JSON.stringify(dataStore.data)
-secDebug.hidden = false
 console.log(dataStore)
 
 // vim: set et sw=2 ts=2 :
