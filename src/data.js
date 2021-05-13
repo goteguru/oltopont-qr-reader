@@ -16,6 +16,7 @@ const dataStore = {
     lakcimOrsz: '',
     lakcimIrsz: '',
     lakcimHely: '',
+    lakcimUtca: '',
     telefon: '',
     email: '',
     vakcina: '',

@@ -137,6 +137,8 @@ document.getElementById("btn-list").onclick = () => {
 const test="PATIONBETEG#012345678|Dr. Valami-Hosszú|Elsőnév Másodiknev|F|20100112|HUN|Kiskunfélegyháza|Hosszú-vezetéknév elsőnév másodiknév|HUN|1234|Kiskunfélegyháza|Valami nagyon nagyon nagyon hosszu utca 111/B|+36301234567|balazs.frey@gmail.com#P|1|Lorem ipsum dolor sit amet, consectetur adipiscing elit.|1|Lorem ipsum dolor sit amet, consectetur adipiscing elit.|0|1|Lorem ipsum dolor sit amet, consectetur adipiscing elit.|0|0|0|0|0|1|Lorem ipsum dolor sit amet, consectetur adipiscing elit.|0|0|0|0|0|1|Lorem ipsum dolor sit amet, consectetur adipiscing elit.|0|0|0"
 
 dataStore.parse(test)
+secDebug.innerText = JSON.stringify(dataStore.data)
+secDebug.hidden = false
 console.log(dataStore)
 
 // vim: set et sw=2 ts=2 :
